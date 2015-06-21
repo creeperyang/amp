@@ -1,0 +1,147 @@
+progress {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -webkit-appearance: none;
+  border: none;
+}
+/* All good till now. Now we'll style the background */
+progress::-webkit-progress-bar {
+  background: #222;
+  border-radius: 1px;
+}
+/* Now the value part */
+progress::-webkit-progress-value {
+  border-radius: 1px;
+  background-color: #4caf50;
+}
+/* That's it! Now let's try creating a new stripe pattern and animate it using animation and keyframes properties  */
+@-webkit-keyframes move {
+  0% {
+    background-position: 0px 0px, 0 0, 0 0;
+  }
+  100% {
+    background-position: -100px 0px, 0 0, 0 0;
+  }
+}
+/* Prefix-free was creating issues with the animation */
+* {
+  padding: 0;
+  margin: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+html {
+  font-size: 20px;
+}
+body {
+  background-color: #444;
+  font-size: 14px;
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+}
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+.container {
+  max-width: 32rem;
+  margin: auto;
+  height: 100%;
+}
+.header {
+  padding: 0.6rem 0 2.4rem;
+}
+.header h2 {
+  font-weight: normal;
+  font-size: 20px;
+  color: #4caf50;
+  vertical-align: top;
+}
+.music-box {
+  margin: auto;
+  height: 100%;
+  padding: 1rem;
+  background-color: #333;
+  box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.4);
+}
+.music-box .music-cover {
+  display: block;
+  width: 14rem;
+  max-height: 14rem;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.8);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transition: -webkit-transform 4s linear;
+  transition: transform 4s linear;
+}
+.music-box .music-cover.active {
+  -webkit-animation: rotate 12s linear infinite;
+}
+.music-box .music-info {
+  width: 16rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+  text-align: center;
+  color: #f1f1f1;
+  line-height: 1.414;
+}
+.music-box .music-info .music-artist-title {
+  font-size: 24px;
+  font-weight: normal;
+}
+.music-box .music-progress {
+  margin: auto;
+  padding: 2rem 0 0;
+  width: 20rem;
+}
+.music-box .music-spectrum {
+  display: block;
+  margin: 0 auto;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.music-box .music-controls {
+  text-align: center;
+  color: #4caf50;
+}
+.music-box .music-controls .icon {
+  margin: 0 0.4rem;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  vertical-align: middle;
+  cursor: pointer;
+  stroke: #4caf50;
+  transition: all 0.4s linear;
+}
+.music-box .music-controls .icon:hover {
+  stroke-width: 24;
+  fill-opacity: 0;
+}
+.music-box .music-controls .icon-play {
+  font-size: 2rem;
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+}
