@@ -11,12 +11,39 @@
 </head>
 
 <body>
+    <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-headphones" viewBox="0 0 1024 1024">
+                <title>headphones</title>
+                <path class="path1" d="M288 576h-64v448h64c17.6 0 32-14.4 32-32v-384c0-17.6-14.4-32-32-32z"></path>
+                <path class="path2" d="M736 576c-17.602 0-32 14.4-32 32v384c0 17.6 14.398 32 32 32h64v-448h-64z"></path>
+                <path class="path3" d="M1024 512c0-282.77-229.23-512-512-512s-512 229.23-512 512c0 61.412 10.83 120.29 30.656 174.848-19.478 33.206-30.656 71.87-30.656 113.152 0 112.846 83.448 206.188 192 221.716v-443.418c-31.914 4.566-61.664 15.842-87.754 32.378-5.392-26.718-8.246-54.364-8.246-82.676 0-229.75 186.25-416 416-416s416 186.25 416 416c0 28.314-2.83 55.968-8.22 82.696-26.1-16.546-55.854-27.848-87.78-32.418v443.44c108.548-15.532 192-108.874 192-221.714 0-41.274-11.178-79.934-30.648-113.138 19.828-54.566 30.648-113.452 30.648-174.866z"></path>
+            </symbol>
+            <symbol id="icon-rewind" viewBox="0 0 1024 1024">
+                <title>rewind</title>
+                <path class="path1" d="M768 170.667q17.667 0 30.167 12.5t12.5 30.167-12.667 30.333l-268.333 268.333 268.333 268.333q12.667 12.667 12.667 30.333t-12.5 30.167-30.167 12.5q-18 0-30.333-12.333l-298.667-298.667q-12.333-12.333-12.333-30.333t12.333-30.333l298.667-298.667q12.333-12.333 30.333-12.333zM512 170.667q17.667 0 30.167 12.5t12.5 30.167-12.667 30.333l-268.333 268.333 268.333 268.333q12.667 12.667 12.667 30.333t-12.5 30.167-30.167 12.5q-18 0-30.333-12.333l-298.667-298.667q-12.333-12.333-12.333-30.333t12.333-30.333l298.667-298.667q12.333-12.333 30.333-12.333z"></path>
+            </symbol>
+            <symbol id="icon-play" viewBox="0 0 1024 1024">
+                <title>play</title>
+                <path class="path1" d="M170.667 896v-768l640 384zM644.667 512l-388.667-233.333v466.667z"></path>
+            </symbol>
+            <symbol id="icon-pause" viewBox="0 0 1024 1024">
+                <title>pause</title>
+                <path class="path1" d="M682.667 128q53 0 90.5 37.5t37.5 90.5v512q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5v-512q0-53 37.5-90.5t90.5-37.5zM341.333 128q53 0 90.5 37.5t37.5 90.5v512q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5v-512q0-53 37.5-90.5t90.5-37.5zM341.333 213.333q-17.667 0-30.167 12.5t-12.5 30.167v512q0 17.667 12.5 30.167t30.167 12.5 30.167-12.5 12.5-30.167v-512q0-17.667-12.5-30.167t-30.167-12.5zM682.667 213.333q-17.667 0-30.167 12.5t-12.5 30.167v512q0 17.667 12.5 30.167t30.167 12.5 30.167-12.5 12.5-30.167v-512q0-17.667-12.5-30.167t-30.167-12.5z"></path>
+            </symbol>
+            <symbol id="icon-fast-forward" viewBox="0 0 1024 1024">
+                <title>fast-forward</title>
+                <path class="path1" d="M469.333 170.667q17.667 0 30 12.333l298.667 298.667q12.667 12.667 12.667 30.333t-12.667 30.333l-298.667 298.667q-12.333 12.333-30 12.333t-30.167-12.5-12.5-30.167q0-18 12.333-30.333l268.333-268.333-268.333-268.333q-12.333-12.333-12.333-30.333 0-18.333 12.167-30.5t30.5-12.167zM213.333 170.667q17.667 0 30 12.333l298.667 298.667q12.667 12.667 12.667 30.333t-12.667 30.333l-298.667 298.667q-12.333 12.333-30 12.333t-30.167-12.5-12.5-30.167q0-18 12.333-30.333l268.333-268.333-268.333-268.333q-12.333-12.333-12.333-30.333 0-18.333 12.167-30.5t30.5-12.167z"></path>
+            </symbol>
+        </defs>
+    </svg>
+
     <article class="container">
         <section class="music-box">
             <header class='header'>
                 <h2>
                     <svg class="icon icon-headphones">
-                        <use xlink:href="images/svgdefs.svg#icon-headphones"></use>
+                        <use xlink:href="#icon-headphones"></use>
                     </svg>&nbsp;Creeper's Player
                 </h2>
             </header>
@@ -32,13 +59,13 @@
             </div>
             <div class="music-controls">
                 <svg class='control-item icon icon-rewind' id='previous'>
-                    <use xlink:href="images/svgdefs.svg#icon-rewind"></use>
+                    <use xlink:href="#icon-rewind"></use>
                 </svg>
                 <svg class='control-item icon icon-play' id='play' data-state='init'>
-                    <use xlink:href="images/svgdefs.svg#icon-play"></use>
+                    <use xlink:href="#icon-play"></use>
                 </svg>
                 <svg class='control-item icon icon-fast-forward' id='next'>
-                    <use xlink:href="images/svgdefs.svg#icon-fast-forward"></use>
+                    <use xlink:href="#icon-fast-forward"></use>
                 </svg>
             </div>
             <footer class='footer'>
