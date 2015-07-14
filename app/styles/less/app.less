@@ -32,7 +32,7 @@ body {
 }
 
 .container {
-    max-width: 32rem;
+    max-width: 30rem;
     margin: auto;
     height: 100%;
 }
@@ -111,6 +111,50 @@ body {
         }
     }
 }
+
+.footer {
+    position: relative;
+    margin-top: 4rem;
+    .site-footer-owner {
+        text-align: center;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.3);
+        a {
+            color: rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+
+@media screen and (max-width: 440px) {
+    .music-box {
+        padding: 0.6rem;
+        .music-progress {
+            width: 100%;
+            padding-left: 0.2rem;
+            padding-right: 0.2rem;
+        }
+    }
+}
+
+@media screen and (max-width: 413px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 12px;
+    }
+}
+
 
 @-webkit-keyframes rotate {
     from {

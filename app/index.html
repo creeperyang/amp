@@ -46,6 +46,9 @@
                     <use xlink:href="/images/svgdefs.svg#icon-fast-forward"></use>
                 </svg>
             </div>
+            <footer class="footer">
+                <p class="site-footer-owner"><a href="https://github.com/creeperyang/AudioPlayer">AudioPlayer</a> is maintained by <a href="https://github.com/creeperyang">creeperyang</a>.</p>
+            </footer>
         </section>
     </article>
     <!-- bower:js -->
@@ -53,6 +56,14 @@
 
     <!-- build:js(app) scripts/main.js -->
     <script type="text/javascript" src='/scripts/app.js'></script>
+    <script type="text/javascript">
+        (function(){
+            var width = document.documentElement.clientWidth;
+            if(width < 387) {
+                document.getElementById('spectrum').width = 300;
+            }
+        })();
+    </script>
     <!-- endbuild -->
 </body>
 
