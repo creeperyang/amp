@@ -1,6 +1,6 @@
 'use strict';
 
-var parser = require('./id3/parser.js');
+var parser = require('id3-parser');
 
 var AudioContext = window.AudioContext || window.webkitAudioContext;
 // Create AudioContext and buffer sourceNode

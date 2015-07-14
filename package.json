@@ -38,6 +38,7 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
+    "id3-parser": "^0.1.0",
     "promise-a-plus": "^0.3.0"
   }
 }

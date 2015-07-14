@@ -1,11 +1,4 @@
-// Generated on 2014-12-11 using generator-angular 0.10.0
 'use strict';
-
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
 
 // Configurable paths for the application
 var appConfig = {
@@ -56,7 +49,7 @@ module.exports = function(grunt) {
                 options: {
                     livereload: '<%= connect.options.livereload %>'
                 },
-                files: [ // 监听到文件变化不执行任何task，直接reload
+                files: [
                     '<%= config.app %>/{,*/}*.{css,html}',
                     '<%= config.app %>/scripts/app.js'
                 ]
