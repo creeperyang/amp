@@ -211,7 +211,8 @@ export default {
       }
       this.currentIndex = index
       this.duration = 0
-      this.tag = {}
+      // Now dont clear tag info, just replace it when new file parsed.
+      // this.tag = {}
       this.play(this.musicList[index].url)
     }
   },
