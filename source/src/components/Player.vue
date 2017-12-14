@@ -18,6 +18,9 @@
       v-on:next="switchMusic(1)"
       v-on:prev="switchMusic(-1)"
     />
+    <div class="words">
+      最怕有一天，突然就听懂了一首歌
+    </div>
   </main>
 </template>
 
@@ -71,6 +74,15 @@
     font-size: 12px;
     color: rgb(77, 77, 137);
     margin: 0;
+  }
+  .words {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0 24px;
+    font-size: 12px;
+    color: #0b0a31;
   }
 </style>
 
