@@ -70,11 +70,13 @@
     font-size: 16px;
     color: #d2d2ea;
     margin: 0;
+    height: 22px;
   }
   .music-artist {
     font-size: 12px;
     color: rgb(77, 77, 137);
     margin: 0;
+    height: 17px;
   }
   .words {
     display: flex;
