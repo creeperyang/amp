@@ -1,7 +1,27 @@
-# AudioPlayer
+# creeper-player
 
-A web audio player, aims to show magic effects that can be reached via modern browser API.
+> A simple audio player
 
-**[Demo](http://creeperyang.github.io/AudioPlayer/)**
+## Build Setup
 
-![player](http://7sbnba.com1.z0.glb.clouddn.com/github-audio-player.png)
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run unit tests
+npm run unit
+
+# run all tests
+npm test
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
