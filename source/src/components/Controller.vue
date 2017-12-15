@@ -3,7 +3,7 @@
     <svg class="ctrl-icon icon-skip-back" v-on:click="switchMusic(-1)">
       <use xlink:href="#icon-skip-back"></use>
     </svg>
-    <svg class="ctrl-icon icon-play" v-if="playing" v-on:click="playOrPauseMusic">
+    <svg class="ctrl-icon icon-play" v-if="!playing" v-on:click="playOrPauseMusic">
       <use xlink:href="#icon-play"></use>
     </svg>
     <svg class="ctrl-icon icon-play" v-else v-on:click="playOrPauseMusic">
