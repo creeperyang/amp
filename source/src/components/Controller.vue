@@ -1,16 +1,16 @@
 <template>
   <div class="ctrl-container">
     <svg class="ctrl-icon icon-skip-back" v-on:click="switchMusic(-1)">
-      <use xlink:href="../../static/svgdefs.svg#icon-skip-back"></use>
+      <use xlink:href="#icon-skip-back"></use>
     </svg>
     <svg class="ctrl-icon icon-play" v-if="playing" v-on:click="playOrPauseMusic">
-      <use xlink:href="../../static/svgdefs.svg#icon-play"></use>
+      <use xlink:href="#icon-play"></use>
     </svg>
     <svg class="ctrl-icon icon-play" v-else v-on:click="playOrPauseMusic">
-      <use xlink:href="../../static/svgdefs.svg#icon-pause"></use>
+      <use xlink:href="#icon-pause"></use>
     </svg>
     <svg class="ctrl-icon icon-skip-forward" v-on:click="switchMusic(1)">
-      <use xlink:href="../../static/svgdefs.svg#icon-skip-forward"></use>
+      <use xlink:href="#icon-skip-forward"></use>
     </svg>
   </div>
 </template>

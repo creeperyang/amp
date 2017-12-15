@@ -1,8 +1,9 @@
 <template>
   <main class="container">
+    <svg-icons />
     <header class="header">
       <svg class="icon-headphones">
-        <use xlink:href="../../static/svgdefs.svg#icon-headphones"></use>
+        <use xlink:href="#icon-headphones"></use>
       </svg>
       <span class="title">Creeper's Player</span>
     </header>
@@ -92,6 +93,7 @@ import { parse } from 'id3-parser'
 import Cover from './Cover'
 import Timebar from './Timebar'
 import Controller from './Controller'
+import SvgIcons from './SvgIcons'
 
 function fetchAudio (url, onload) {
   const request = new XMLHttpRequest()
@@ -231,7 +233,8 @@ export default {
   components: {
     Cover,
     Timebar,
-    Controller
+    Controller,
+    SvgIcons
   }
 }
 </script>
