@@ -37,8 +37,6 @@
   @media screen and (min-width: 451px) {
     .container {
       box-shadow: 0 0 16px 4px rgba(15, 14, 56, 0.65);
-      margin-top: 16px;
-      margin-bottom: 16px;
       border-radius: 16px;
       height: initial;
       width: 350px;
