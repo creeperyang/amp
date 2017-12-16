@@ -22,6 +22,7 @@
     <div class="words">
       最怕有一天，突然就听懂了一首歌
     </div>
+    <spectrum :analyser="analyser" :current="currentTime" :width="88" :height="24"/>
   </main>
 </template>
 
@@ -81,7 +82,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 16px 0 24px;
+    padding: 16px 0 1px;
     font-size: 12px;
     color: #0b0a31;
   }
@@ -89,11 +90,11 @@
 
 <script>
 import { parse } from 'id3-parser'
-// import { fetchFileAsBuffer } from 'id3-parser/lib/universal/helpers'
 import Cover from './Cover'
 import Timebar from './Timebar'
 import Controller from './Controller'
 import SvgIcons from './SvgIcons'
+import Spectrum from './Spectrum'
 
 function fetchAudio (url, onload) {
   const request = new XMLHttpRequest()
@@ -113,7 +114,8 @@ export default {
       currentIndex: this.initialIndex || 0,
       tag: {},
       duration: 100,
-      currentTime: 0
+      currentTime: 0,
+      analyser: null
     }
   },
   computed: {
@@ -234,7 +236,8 @@ export default {
     Cover,
     Timebar,
     Controller,
-    SvgIcons
+    SvgIcons,
+    Spectrum
   }
 }
 </script>
