@@ -123,6 +123,11 @@ export default {
       return this.tag.image || {}
     }
   },
+  created () {
+    const AudioContext = window.AudioContext || window.webkitAudioContext
+    // Create AudioContext and buffer sourceNode
+    this.audioCtx = new AudioContext()
+  },
   mounted () {
     if (!this.musicList || !this.musicList.length) return
 
@@ -156,9 +161,7 @@ export default {
       })
     },
     setup () {
-      const AudioContext = window.AudioContext || window.webkitAudioContext
-      // Create AudioContext and buffer sourceNode
-      const audioCtx = (this.audioCtx = new AudioContext())
+      const audioCtx = this.audioCtx
       this.sourceNode = audioCtx.createBufferSource()
       this.scriptNode = audioCtx.createScriptProcessor(4096, 1, 1)
       this.analyser = audioCtx.createAnalyser()
