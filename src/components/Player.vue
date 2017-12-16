@@ -113,7 +113,7 @@ export default {
       title: `Creeper's player`,
       currentIndex: this.initialIndex || 0,
       tag: {},
-      duration: 100,
+      duration: 0,
       currentTime: 0,
       analyser: null
     }
@@ -132,11 +132,14 @@ export default {
   methods: {
     play (url) {
       this.destroy()
-      this.setup()
       fetchAudio(url, request => {
         const audioData = request.response
-        const tag = parse(new Uint8Array(audioData))
-        this.tag = tag
+        let tag
+        try {
+          tag = parse(new Uint8Array(audioData))
+        } catch (e) {}
+        this.tag = tag || {}
+        this.setup()
         this.audioCtx.decodeAudioData(
           audioData,
           buffer => {
@@ -226,9 +229,8 @@ export default {
         index = 0
       }
       this.currentIndex = index
-      this.duration = 0
-      // Now dont clear tag info, just replace it when new file parsed.
-      // this.tag = {}
+      this.currentTime = this.duration = 0
+      this.tag = {}
       this.play(this.musicList[index].url)
     }
   },
