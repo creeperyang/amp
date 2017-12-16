@@ -31,7 +31,6 @@ export default {
   },
   mounted () {
     this.ctx = this.$refs.canvas.getContext('2d')
-    // let stamp = Date.now()
     this.$watch('current', () => {
       if (!this.drawing) {
         this.drawSpectrum()
@@ -42,6 +41,7 @@ export default {
     drawSpectrum () {
       const ctx = this.ctx
       const analyser = this.analyser
+      if (!analyser) return
       const dataArray = new Uint8Array(analyser.frequencyBinCount)
       analyser.getByteFrequencyData(dataArray)
 

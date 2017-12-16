@@ -137,7 +137,9 @@ export default {
         let tag
         try {
           tag = parse(new Uint8Array(audioData))
-        } catch (e) {}
+        } catch (e) {
+          console.log('Fail to parse id3 tag.', e)
+        }
         this.tag = tag || {}
         this.setup()
         this.audioCtx.decodeAudioData(
@@ -148,7 +150,7 @@ export default {
             this.duration = buffer.duration
           },
           e => {
-            console.log('Error with decoding audio data' + e.err)
+            console.log('Fail to decoding audio data.', e)
           }
         )
       })
@@ -209,7 +211,6 @@ export default {
       if (this.currentTime > this.duration) {
         this.currentTime = this.duration
       }
-      // drawSpectrum();
     },
     onEnded () {
       this.destroy()
