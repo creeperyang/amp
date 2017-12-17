@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <player :musicList="state.musicList" :initialIndex="0" v-on:error="this.onError"/>
+    <player
+      :musicList="state.musicList"
+      :initialIndex="0"
+      v-on:error="this.onError"
+      v-on:clickheader="showAbout"
+    />
     <transition name="slide-fade">
       <router-view/>
     </transition>
@@ -19,7 +24,6 @@ export default {
     }
   },
   created () {
-    console.log(this)
     this.$watch('state.error', (now, prev) => {
       if (now !== prev) {
         this.$router.push({
@@ -31,6 +35,9 @@ export default {
   methods: {
     onError (e) {
       store.setError(e)
+    },
+    showAbout () {
+      this.$router.push('/about')
     }
   },
   components: {

@@ -5,7 +5,7 @@
       <svg class="icon-headphones">
         <use xlink:href="#icon-headphones"></use>
       </svg>
-      <span class="title">Creeper's Player</span>
+      <span class="title" v-on:click="onHeaderClick">Creeper's Player</span>
     </header>
     <Cover :mime="cover.mime" :data="cover.data" />
     <Timebar :count="duration" :current="currentTime" :width="300"/>
@@ -52,7 +52,9 @@
     padding: 24px 0 40px;
     font-size: 20px;
     color: #0b0a31;
-    /* color: rgb(220,31,48); */
+  }
+  .header .title {
+    cursor: pointer;
   }
   .icon-headphones {
     margin-left: 24px;
@@ -250,6 +252,9 @@ export default {
       this.currentTime = this.duration = 0
       this.tag = {}
       this.play(this.musicList[index].url)
+    },
+    onHeaderClick () {
+      this.$emit('clickheader')
     }
   },
   components: {

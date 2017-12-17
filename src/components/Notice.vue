@@ -3,11 +3,11 @@
     <svg class="icon-close" v-on:click="back">
       <use xlink:href="#icon-close"></use>
     </svg>
-    <div class="notice-title">
+    <img class="notice-img" v-if="img" :src="img">
+    <div class="notice-title" v-if="title">
       {{title}}
     </div>
-    <div class="notice-message">
-      {{message}}
+    <div class="notice-message" v-if="message" v-html="message">
     </div>
   </div>
 </template>
@@ -25,6 +25,12 @@
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   color: #d2d2ea;
+}
+.notice-img {
+  display: block;
+  height: 100px;
+  margin: 12px auto;
+  border-radius: 50px;
 }
 .notice-title {
   text-align: center;
@@ -54,13 +60,7 @@
 <script>
 export default {
   name: 'notice',
-  props: ['title', 'message'],
-  data () {
-    return {
-      // title: 'Notice',
-      // message: 'nothing -------'
-    }
-  },
+  props: ['title', 'message', 'img'],
   methods: {
     back () {
       this.$router.go(-1)
