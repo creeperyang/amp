@@ -144,6 +144,13 @@ export default {
           tag = parse(new Uint8Array(audioData))
         } catch (e) {
           console.log('Fail to parse id3 tag.', e)
+          tag = {
+            title: /([^/]+)\.\w+$/.test(decodeURIComponent(url)) ? RegExp.$1 : '未知曲目',
+            artist: '未知歌手',
+            image: {
+              data: require('../assets/cover.png')
+            }
+          }
         }
         this.tag = tag || {}
         this.setup()
