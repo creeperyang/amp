@@ -44,10 +44,19 @@
 <script>
 export default {
   name: 'controller',
+  props: ['resetState'],
   data () {
     return {
       playing: true
     }
+  },
+  created () {
+    this.$watch('resetState', (now, prev) => {
+      // 切换歌曲时重置为播放状态
+      if (now !== prev) {
+        this.playing = true
+      }
+    })
   },
   methods: {
     playOrPauseMusic () {

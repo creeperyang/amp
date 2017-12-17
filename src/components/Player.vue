@@ -18,6 +18,7 @@
       v-on:pause="pauseMusic"
       v-on:next="switchMusic(1)"
       v-on:prev="switchMusic(-1)"
+      :resetState="currentIndex"
     />
     <div class="words">
       最怕有一天，突然就听懂了一首歌
@@ -194,7 +195,11 @@ export default {
         this.analyser = null
       }
       if (this.scriptNode) {
-        this.scriptNode.disconnect(this.audioCtx.destination)
+        if (this._disconnected) {
+          this._disconnected = false
+        } else {
+          this.scriptNode.disconnect(this.audioCtx.destination)
+        }
         this.scriptNode.onaudioprocess = null
         this.scriptNode = null
       }
@@ -228,9 +233,11 @@ export default {
     },
     pauseMusic () {
       this.scriptNode.disconnect(this.audioCtx.destination)
+      this._disconnected = true
     },
     resumeMusic () {
       this.scriptNode.connect(this.audioCtx.destination)
+      this._disconnected = false
     },
     switchMusic (direction) {
       let index = this.currentIndex + direction
