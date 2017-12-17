@@ -97,12 +97,12 @@ import Controller from './Controller'
 import SvgIcons from './SvgIcons'
 import Spectrum from './Spectrum'
 
-function fetchAudio (url, onload) {
+function fetchAudio (url, onload, onerror) {
   const request = new XMLHttpRequest()
   request.open('GET', url, true)
   request.responseType = 'arraybuffer'
   request.onload = () => onload(request)
-  request.onerror = (e) => console.log(e)
+  request.onerror = onerror
   request.send()
 }
 
@@ -144,7 +144,7 @@ export default {
         try {
           tag = parse(new Uint8Array(audioData))
         } catch (e) {
-          console.log('Fail to parse id3 tag.', e)
+          this.$emit('error', '解析ID3标签失败')
           tag = {
             title: /([^/]+)\.\w+$/.test(decodeURIComponent(url)) ? RegExp.$1 : '未知曲目',
             artist: '未知歌手',
@@ -163,10 +163,10 @@ export default {
             this.duration = buffer.duration
           },
           e => {
-            console.log('Fail to decoding audio data.', e)
+            this.$emit('error', '解码音频数据失败')
           }
         )
-      })
+      }, e => this.$emit('error', '从服务器获取资源失败'))
     },
     setup () {
       const audioCtx = this.audioCtx

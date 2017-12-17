@@ -16,7 +16,11 @@ const store = {
       url: 'http://7sbnba.com1.z0.glb.clouddn.com/music-魔鬼中的天使.mp3'
     }, {
       url: 'http://7sbnba.com1.z0.glb.clouddn.com/music-改造人.mp3'
-    }]
+    }],
+    error: null
+  },
+  setError (e) {
+    this.state.error = e
   }
 }
 

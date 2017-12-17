@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <player :musicList="musicList" :initialIndex="0"/>
-    <router-view/>
+    <player :musicList="state.musicList" :initialIndex="0" v-on:error="this.onError"/>
+    <transition name="slide-fade">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -13,7 +15,22 @@ export default {
   name: 'app',
   data () {
     return {
-      musicList: store.state.musicList
+      state: store.state
+    }
+  },
+  created () {
+    console.log(this)
+    this.$watch('state.error', (now, prev) => {
+      if (now !== prev) {
+        this.$router.push({
+          path: now ? '/error' : '/'
+        })
+      }
+    })
+  },
+  methods: {
+    onError (e) {
+      store.setError(e)
     }
   },
   components: {
@@ -38,5 +55,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.slide-fade-enter-active {
+  transition: all .4s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(100%);
+  opacity: 0;
 }
 </style>

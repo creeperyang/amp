@@ -1,15 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Player from '@/components/Player'
+import ErrorComponent from '@/components/Error'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'Player',
-    //   component: Player
-    // }
+    {
+      path: '/error',
+      name: 'error',
+      component: ErrorComponent,
+      props: true
+    }
   ]
 })
