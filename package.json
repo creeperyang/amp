@@ -1,9 +1,8 @@
 {
-  "name": "creeper-player",
-  "version": "1.0.0",
-  "description": "A simple audio player",
+  "name": "amp",
+  "version": "2.2.0",
+  "description": "A simple music player",
   "author": "creeperyang <yangcreeper@hotmail.com>",
-  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
